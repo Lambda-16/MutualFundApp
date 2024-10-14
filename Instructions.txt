@@ -24,22 +24,28 @@ so that we don't exhaust rapid-api response limit.
 
 Setup Instructions:
 Step 1: Clone the Project git clone https://github.com/Lambda-16/Mutual-Fund-App.git
-Navigate to the root directory in your terminal.
+Navigate to the root directory(Mutual-Fund-App) in your terminal.
 
 Step 2: Build Docker Images
 Run this to check docker installation: docker -v
 Run  to check docker-compose installation: docker-compose -v
 Run this command to build the Docker images for both frontend and backend: docker-compose build
 
-Step 3: Run the Containers
+Step 3 Install react-scripts
+For some reason react-scrpts are not installed as part of dependencies please install it separately to move further
+commands:   cd frontend
+            npm install react-scripts
+
+Step 4: Run the Containers
 Run this command to start the containers: docker-compose up
+Frontend takes about 5 minutes to start
 
 This will start:
 - The backend at `http://localhost:8000`
 - The frontend at `http://localhost:3000`
 
 Once done with the testing
-Step 4: Stop the Containers
+Step 5: Stop the Containers
 To stop the running containers, press `CTRL+C` in the terminal or run:
 docker-compose down
 
