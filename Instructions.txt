@@ -1,0 +1,45 @@
+Instructions to Build and Run Docker Containers for Groww Project
+
+Prerequisites:
+1. Install Docker and Docker Compose: https://www.docker.com/products/docker-desktop
+2. Login to https://rapidapi.com/suneetk92/api/latest-mutual-fund-nav and subscripbe to base(free) plan and get the rapid_api key(x-rapidapi-key)
+
+### Notes:
+- I am sharing my .env file but mostly it is not shared and need to be populated with appropriate values after cloning the project before building the containers.
+Here also .env file need to populated with appropriate values like rapid-api-key, desired dummy username and password(currently it is admin, admin)
+
+- If any changes are made to the `Dockerfile` or dependencies, run `docker-compose build` again to rebuild the images.
+
+- For login We have two options either you can register a new username(or email) and password and use those credentials for your login and access token or you can 
+provide a username and password in your .env file which can be used directly in the login window.
+
+- I have used in-memory tables for login data and investments data, in reality I would use relational database for login dataand a key value pair like Redis(but because of 
+time constraint and simplicity I am storing data inmemory). Thats why data is scratched when the server restarts
+
+- In BrowseMutualFunds->fetching all mutual fund family is a very expensive query and quickly exhausts the rapid-api free limit for number of items returned.
+Please use a new rapid_key id in .env if the limit is exhausted
+Optionally to test the functionalities I have commented out hard-coded values to return which can be used(C:\Users\USER\Downloads\Groww\mfapp\routers\mutualfund\mutualfund.py),
+so that we don't exhaust rapid-api response limit.
+
+
+Setup Instructions:
+Step 1: Clone the Project git clone https://github.com/Lambda-16/Mutual-Fund-App.git
+Navigate to the root directory in your terminal.
+
+Step 2: Build Docker Images
+Run this to check docker installation: docker -v
+Run  to check docker-compose installation: docker-compose -v
+Run this command to build the Docker images for both frontend and backend: docker-compose build
+
+Step 3: Run the Containers
+Run this command to start the containers: docker-compose up
+
+This will start:
+- The backend at `http://localhost:8000`
+- The frontend at `http://localhost:3000`
+
+Once done with the testing
+Step 4: Stop the Containers
+To stop the running containers, press `CTRL+C` in the terminal or run:
+docker-compose down
+
