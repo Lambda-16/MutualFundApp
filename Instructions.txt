@@ -23,8 +23,8 @@ so that we don't exhaust rapid-api response limit.
 
 
 Setup Instructions:
-Step 1: Clone the Project git clone https://github.com/Lambda-16/Mutual-Fund-App.git
-Navigate to the root directory(Mutual-Fund-App) in your terminal.
+Step 1: Clone the Project git clone https://github.com/LAMBDA-16/MutualFundApp.git
+Navigate to the root directory(MutuaFundApp) in your terminal.
 
 Step 2: Build Docker Images
 Run this to check docker installation: docker -v
