@@ -3,6 +3,8 @@ Instructions to Build and Run Docker Containers for Groww Project
 Prerequisites:
 1. Install Docker and Docker Compose: https://www.docker.com/products/docker-desktop
 2. Login to https://rapidapi.com/suneetk92/api/latest-mutual-fund-nav and subscripbe to base(free) plan and get the rapid_api key(x-rapidapi-key)
+3. Download the Node.js installer from the official website.
+If Node.js is installed but you still get the npm not found error(in step 3 of setup), ensure that the installation path is included in your system's PATH variable.
 
 ### Notes:
 - I am sharing my .env file but mostly it is not shared and need to be populated with appropriate values after cloning the project before building the containers.
